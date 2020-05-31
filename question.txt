@@ -1,0 +1,36 @@
+0.makefile -Iinclude 问题  :make: *** No rule to make target 'c.h', needed by 'c.o'. Stop.
+[已解决] 把-I include 放到最后
+
+2.1001  start.S 初始化顺序问题 : 必须先设置设置CLKDIVN寄存器，再设置PLLCON寄存器，不然时钟无效，为什么？
+[已解决][百问网已回答]
+
+3.1204 删掉了sdram_init(),  led_test()程序仍然有效？
+[已解决]: [不配置sdram也可以勉强运行] 
+
+4.1301 全局变量Nand flash 为什么 -Tdata 指定数据段大于一定范围，就读不出来呢？
+
+5. ldr pc, =main 和 bl main 有啥不一样
+
+6. 1404 und异常，加入异常语句“0xdeadc0de”前面必须要有打印语句？
+[已解决]http://bbs.100ask.net/question/13
+
+6. 1404 处理异常时为什么重新设置栈
+
+7. mrs是啥
+
+8. 1404 里为什么要保存lr，lr是什么
+[已解决] lr 是异常前下一条语句的地址，这是硬件帮我们放到 lr 里面的，软件需要我们自己保存起来
+
+9. 1404 里的^是什么
+
+10.	ldr pc, =sdram
+sdram:
+	bl uart0_config	/* 初始化串口 */
+
+11. 1501 -march=armv4 是什么
+
+12. get_uint();
+
+13. 18_adc 在register_irq 读取寄存器，发现负值，handle_irq_c 也是
+
+14. 18_adc 触摸屏的ADCDLY 是啥
